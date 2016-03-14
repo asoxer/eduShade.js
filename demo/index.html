@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        width: 980px;
+        margin: 0 auto;
+      }
+      .a {
+        width: 200px;
+        height: 100px;
+        background-color: rgb(133, 223, 81);
+      }
+      .b {
+        width: 400px;
+        height: 200px;
+        background-color: rgb(88, 195, 236);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="a" data-selector="a">
+        <h1>模块a</h1>
+      </div>
+      <div class="b" data-selector="b">
+        <h1>模块b</h1>
+      </div>
+    </div>
+    <script charset="utf-8" src="js/jquery.js"></script>
+    <script charset="utf-8" src="js/jquery.eduShade.js"></script>
+    <script type="text/javascript">
+      $.educate({list: [
+          {
+            highLightEl: {
+              elm: $('[data-selector="a"]'),
+              padding: '5 5 5 5'
+            },
+            diyEl: {
+              //有高亮区域 相对高亮区域左上角  无高亮区域 自定义区域居中
+              html: $('<div>自定义模块</div>'),
+              css: {
+                height: 100,
+                width: 100,
+                backgroundColor: '#f90',
+                top: 100,
+                fontSize: 30
+              }
+            },
+            img: { //有高亮区域 相对高亮区域左上角  无高亮区域 图片居中
+              imgSrc: 'img/quickInterview.png',
+              top: 110,
+              left: -100
+            },
+            btnNext: {
+              css: {
+                height: 65,
+                width: 210,
+                top: 432,
+                left: 182,
+                backgroundColor: 'blue', //方便找位置
+                opacity: .4
+              },
+              callback: function() {
+                console.log('next1');
+              }
+            },
+            btnClose: {
+              css: {
+                height: 50,
+                width: 56,
+                top: 102,
+                left: 484,
+                backgroundColor: 'red',
+                opacity: .4
+              },
+              callback: function() {
+                console.log('close1');
+              }
+            },
+            btnBack: {
+              css: {
+                height: 50,
+                width: 100,
+                top: 0,
+                left: 0,
+                backgroundColor: 'yellow',
+                opacity: .4
+              },
+              callback: function() {
+                console.log('back1');
+              }
+            }
+          }, {
+            img: { //有高亮区域 相对高亮区域左上角  无高亮区域 图片居中
+              imgSrc: 'img/quickInterview.png',
+              top: 110,
+              left: -100
+            },
+            btnNext: {
+              css: {
+                height: 65,
+                width: 210,
+                top: 432,
+                left: 182,
+                backgroundColor: 'blue', //方便找位置
+                opacity: .4
+              },
+              callback: function() {
+                console.log('next1');
+              }
+            },
+            btnClose: {
+              css: {
+                height: 50,
+                width: 56,
+                top: 102,
+                left: 484,
+                backgroundColor: 'red',
+                opacity: .4
+              },
+              callback: function() {
+                console.log('close1');
+              }
+            },
+            btnBack: {
+              css: {
+                height: 50,
+                width: 100,
+                top: 450,
+                left: 0,
+                backgroundColor: 'yellow',
+                opacity: .4
+              },
+              callback: function() {
+                console.log('back1');
+              }
+            }
+          }
+        ]});
+    </script>
+  </body>
+</html>
